@@ -277,7 +277,7 @@ describe("types", () => {
     });
   });
 
-  xdescribe("removeItem", () => {
+  describe("removeItem", () => {
     it("returns a new array without the item in the passed position", () => {
       expect(removeItem([1], 0)).to.eql([]);
       expect(removeItem([1, 2, 3], 1)).to.eql([1, 3]);
