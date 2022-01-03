@@ -3,14 +3,17 @@
 
 function modulo(a, b) {
   // return the remainder of a / b
+  return (a % b)
 }
 
 function squareRoot(n) {
   // return the square root of n
+  return(Math.sqrt(n))
 }
 
 function raiseToPower(m, n) {
   // return the result of raising m to the nth power
+  return(Math.pow(m,n))
 }
 
 function formatMoney(amount) {
@@ -18,11 +21,17 @@ function formatMoney(amount) {
    * return a the amount formatted into pounds sterling
    * Amounts should be a string with the £ symbol in front
    * formatMoney(2.33) => "£2.33"
-   * Amounts should be rounded to 2 decimal numbers
+   * Amounts should be rounded to 2 decimal numbers1
    * formatMoney(2.338) => "£2.34"
    * Amounts should always have 2 decimal numbers even if they are zeroes
    * formatMoney(1) => "£1.00"
    */
+   var priceGBP = new Intl.NumberFormat('en-GB', {
+    style: 'currency',
+    currency: 'GBP',
+    minimumFractionDigits: 2
+  }).format(amount);
+  return (priceGBP)
 }
 
 function calculateCircleArea(r) {
@@ -202,7 +211,7 @@ function updateVoterAddress(voter, correctHouseNumber) {
   */
 }
 
-function createUserString(userObj) {
+function createUserString(userObj) {}
   // should take as an argument an object with the format from createNorthcoder
   // returns a string with the user's details in the form:
   // 'name: Mitch, age: 27, language: Javascript';
@@ -285,5 +294,4 @@ module.exports = {
   getNorthcodersNames,
   getAlbumProperties,
   deleteManyPasswords,
-  countTheObjects,
-};
+  countTheObjects};
